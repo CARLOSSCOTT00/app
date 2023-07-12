@@ -1,0 +1,230 @@
+section {
+  background-color: #87ceeb;
+  display: inline-block;
+  width: 95vw;
+  height: auto;
+  padding: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+/* menu superior */
+#menuSuperior ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#menuSuperior ul li {
+  margin: 0 5px;
+}
+
+#menuSuperior ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#menuSuperior ul li a:hover {
+  background-color: #007bff;
+}
+
+/* Estilos para el formulario de crear reserva */
+#crearReservaForm label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+#crearReservaForm input,
+#crearReservaForm select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+#menuSuperior ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#menuSuperior ul li a:hover {
+  background-color: #007bff;
+}
+
+/* botones y tablas */
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 0.4vw;
+  border-bottom: 1px solid #ddd;
+  font-size: 1vw
+      /* Tamaño de letra relativo al ancho de la sección */
+}
+
+tr:first-child {
+  background-color: #156de996;
+  /* Color de fondo para la primera fila */
+  color: white;
+  /* Color del texto para la primera fila */
+}
+
+/* Estilos para las columnas pares */
+tr:nth-child(even) td {
+  background-color: #416a909a;
+  /* Color de fondo para columnas pares */
+}
+
+/* Estilos para las columnas impares */
+tr:nth-child(odd) td {
+  background-color: #688fce9c;
+  /* Color de fondo para columnas impares */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/ .hidden {
+  display: none;
+}
+
+.boton-modificar,
+.boton-eliminar {
+  color: white;
+  padding: 6px 12px;
+  margin-right: 5px;
+}
+
+.modificar-btn {
+  background-color: rgba(0, 128, 0, 0);
+  /* Color de fondo para el botón Modificar */
+  color: rgb(15, 8, 8);
+  /* Color del texto para el botón Modificar */
+  border: none;
+  padding: 1.5 px;
+
+  border-radius: 4px;
+}
+
+.eliminar-btn {
+  background-color: rgba(255, 0, 0, 0);
+  /* Color de fondo para el botón Eliminar */
+  color: rgb(11, 7, 7);
+  /* Color del texto para el botón Eliminar */
+  border: none;
+  padding: 1.5 px;
+
+  border-radius: 4px;
+}
+
+.modificar-btn:hover {
+  background-color: rgba(0, 128, 0, 0.558);
+}
+
+.eliminar-btn:hover {
+  background-color: rgba(107, 11, 9, 0.519);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.btnConsulta,
+.btnCrear {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select,
+form button {
+  padding: 8px;
+  width: 20%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="text"]:hover,
+form input[type="email"]:hover,
+form select:hover,
+form button:hover {
+  border-color: rgb(0, 255, 102);
+  /* Cambiar el color del borde en el hover */
+  color: rgb(0, 8, 255);
+  /* Cambiar el color del texto en el hover */
+}
+
+
+
+.mensaje-alerta {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gestor de reservas </title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <section> 
+        <h1>Bienvenido al gestor de Reservas</h1>
+        <button onclick="mostrarFunciones()">Reservar</button>
+
+        <!-- Menú superior -->
+        <div id="menuSuperior" class="hidden">
+            <ul>
+                <li><a onclick="mostrarCrearReserva()">Crear Reserva</a></li>
+                <li><a onclick="mostrarReservasCreadas()">Ver Reservas Creadas</a></li>
+                <li><a onclick="mostrarConsultarReserva()">Consultar Reserva por ID</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección oculta de modificar reserva -->
+        <div id="modificarReservaSection" class="hidden">
+            <h2 id="tituloModificarReserva"></h2>
+            <form id="modificarReservaForm">
+                <!-- Campos del formulario -->
+                <input type="hidden" id="modificarId">
+                <label for="modificarNombre">Nombre:</label>
+                <input type="text" id="modificarNombre" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    title="Ingrese un nombre válido">
+                <br>
+                <label for="modificarApellido">Apellido:</label>
+                <input type="text" id="modificarApellido" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    title="Ingrese un apellido válido">
+                <br>
+                <label for="modificarTipoDocumento">Tipo de Documento:</label>
+                <select id="modificarTipoDocumento" required>
+                    <option value="DNI">DNI</option>
+                    <option value="CI">CI</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <br>
+                <label for="modificarNacionalidad">Nacionalidad:</label>
+                <input type="text" id="modificarNacionalidad" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    title="Ingrese una nacionalidad válida">
+                <br>
+                <label for="modificarDestino">Destino:</label>
+                <select required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Seleccione un destino"
+                    id="modificarDestino" required>
+                    <option value="" disabled selected>Seleccione un destino</option>
+                    <option value="bariloche">Bariloche</option>
+                    <option value="el_calafate">El Calafate</option>
+                    <option value="full_day_colonia_del_sacramento">Full Day Colonia del Sacramento</option>
+                    <option value="full_day_experiencia_de_vino_en_colonia">Full Day Experiencia de Vino en Colonia
+                    </option>
+                    <option value="iguazu">Iguazú</option>
+                    <option value="madero_tango">Madero Tango</option>
+                    <option value="mendoza">Mendoza</option>
+                    <option value="uruguay">Uruguay</option>
+                </select>
+                <br>
+                <label for="modificarFechaInicio">Fecha de Inicio:</label>
+                <input type="date" id="modificarFechaInicio" required title="Seleccione una fecha">
+                <br>
+                <label for="modificarFechaFinal">Fecha Final:</label>
+                <input type="date" id="modificarFechaFinal" required title="Seleccione una fecha">
+                <br>
+                <label for="modificarCantidadPasajeros">Cantidad de Pasajeros:</label>
+                <input type="number" id="modificarCantidadPasajeros" required min="1"
+                    title="Ingrese una cantidad válida">
+                <br>
+                <label for="modificarEmail">Email:</label>
+                <input type="email" id="modificarEmail" required title="Ingrese un email válido">
+                <br>
+                <label for="modificarTelefono">Teléfono:</label>
+                <input type="text" id="modificarTelefono" required pattern="[0-9]+"
+                    title="Ingrese un número de teléfono válido">
+                <br>
+                <button type="submit">Modificar</button>
+            </form>
+        </div>
+
+        <!-- Sección de crear reserva -->
+        <div id="crearReservaSection" class="hidden">
+            <h2>Crear Reserva</h2>
+            <form id="crearReservaForm">
+                <!-- Campos del formulario -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    title="Ingrese un nombre válido">
+                <br>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    title="Ingrese un apellido válido">
+                <br>
+                <label for="tipo_documento">Tipo de Documento:</label>
+                <select id="tipo_documento" required>
+                    <option value="DNI">DNI</option>
+                    <option value="CI">CI</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <br>
+                <label for="nacionalidad">Nacionalidad:</label>
+                <input type="text" id="nacionalidad" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                    title="Ingrese una nacionalidad válida">
+                <br>
+                <label for="destino">Destino:</label>
+                <select required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Seleccione un destino" id="destino"
+                    required>
+                    <option value="" disabled selected>Seleccione un destino</option>
+                    <option value="bariloche">Bariloche</option>
+                    <option value="el_calafate">El Calafate</option>
+                    <option value="full_day_colonia_del_sacramento">Full Day Colonia del Sacramento</option>
+                    <option value="full_day_experiencia_de_vino_en_colonia">Full Day Experiencia de Vino en Colonia
+                    </option>
+                    <option value="iguazu">Iguazú</option>
+                    <option value="madero_tango">Madero Tango</option>
+                    <option value="mendoza">Mendoza</option>
+                    <option value="uruguay">Uruguay</option>
+                </select>
+                <br>
+                <label for="fecha_inicio">Fecha de Inicio:</label>
+                <input type="date" id="fecha_inicio" required title="Seleccione una fecha">
+                <br>
+                <label for="fecha_final">Fecha Final:</label>
+                <input type="date" id="fecha_final" required title="Seleccione una fecha">
+                <br>
+                <label for="cantidad_pasajeros">Cantidad de Pasajeros:</label>
+                <input type="number" id="cantidad_pasajeros" required min="1" title="Ingrese una cantidad válida">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required title="Ingrese un email válido">
+                <br>
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" required pattern="[0-9]+" title="Ingrese un número de teléfono válido">
+                <br>
+                <button class="btnCrear" type="submit">Crear</button>
+            </form>
+        </div>
+        <!-- Sección de reservas creadas -->
+        <div id="reservasCreadasSection" class="hidden">
+            <h2>Reservas Creadas</h2>
+            <div class="table-wrapper">
+                <table id="reservasTable">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Tipo de Documento</th>
+                        <th>Nacionalidad</th>
+                        <th>Destino</th>
+                        <th>Fecha de Inicio</th>
+                        <th>Fecha Final</th>
+                        <th>Cantidad de Pasajeros</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Sección de consultar reserva por ID -->
+        <div id="consultarReservaSection" class="hidden">
+            <h2>Consultar Reserva por ID</h2>
+            <form id="consultarReservaForm">
+                <label for="idReserva">ID de Reserva:</label>
+                <input type="number" id="idReserva" required>
+                <button class="btnConsulta" type="submit">Consultar</button>
+            </form>
+            <div id="resultadoReserva"></div>
+        </div>
+    </section>
+    
+</body>
+
+</html>
